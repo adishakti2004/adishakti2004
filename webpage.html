@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <title>OA Tools</title>
+    <link rel="stylesheet" href="coll.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+</head>
+
+<body onload="myfunction()">
+
+    <section>
+        <div class="clock">
+            <div class="container1">
+                <div id="date" class="bol">00</div>
+                <h2 id="hrs">00</h2>
+                <h2 class="dot">:</h2>
+                <h2 id="mins">00</h2>
+                <h2 class="dot">:</h2>
+                <h2 id="secs">00</h2>
+                <span id="ampm">AM</span>
+            </div>
+        </div>
+    </section>
+
+<div class="body">
+    <div class="container2">
+        <form class="calculator" name="calc">
+                <input id="display" class="value" name="display" value="" size="28" readonly>
+                <input type="button" class="btnTop span clear" name="btnTop" value="C" onclick="this.form.display.value= 0 ">
+                <input type="button" class="btnTop span" name="btnTop" value="<--" onclick="deleteChar(this.form.display)">
+                <input type="button" class="btnTop span equal" name="btnTop" value="=" onclick="if(checkNum(this.form.display.value)) { compute(this.form) }">
+                <input type="button" class="btnOpps span" name="btnOpps" value="&#960;" onclick="addChar(this.form.display,'3.14159265359')">
+                <input type="button" class="btnMath span" name="btnMath" value="%" onclick=" percent(this.form.display)">                             
+                <input type="button" class="btnNum span" name="btnNum" value="1" onclick="addChar(this.form.display, '1')">
+                <input type="button" class="btnNum span" name="btnNum" value="2" onclick="addChar(this.form.display, '2')">
+                <input type="button" class="btnNum span" name="btnNum" value="3" onclick="addChar(this.form.display, '3')">
+                <input type="button" class="btnOpps span" name="btnOpps" value="x&#94;x" onclick="if(checkNum(this.form.display.value)) { exp(this.form) }">
+                <input type="button" class="btnMath span" name="btnMath" value="/" onclick="addChar(this.form.display, '/')">            
+                <input type="button" class="btnNum span" name="btnNum" value="4" onclick="addChar(this.form.display, '4')">
+                <input type="button" class="btnNum span" name="btnNum" value="5" onclick="addChar(this.form.display, '5')">
+                <input type="button" class="btnNum span" name="btnNum" value="6" onclick="addChar(this.form.display, '6')">
+                <input type="button" class="btnOpps span" name="btnOpps" value="ln" onclick="if(checkNum(this.form.display.value)) { ln(this.form) }">
+                <input type="button" class="btnMath span" name="btnMath" value="*" onclick="addChar(this.form.display, '*')">             
+                <input type="button" class="btnNum span" name="btnNum" value="7" onclick="addChar(this.form.display, '7')">
+                <input type="button" class="btnNum span" name="btnNum" value="8" onclick="addChar(this.form.display, '8')">
+                <input type="button" class="btnNum span" name="btnNum" value="9" onclick="addChar(this.form.display, '9')">
+                <input type="button" class="btnOpps span" name="btnOpps" value="&radic;" onclick="if(checkNum(this.form.display.value)) { sqrt(this.form) }">
+                <input type="button" class="btnMath span" name="btnMath" value="-" onclick="addChar(this.form.display, '-')">
+                <input type="button" class="btnMath span" name="btnMath" value="&#177" onclick="changeSign(this.form.display)">
+                <input type="button" class="btnNum span" name="btnNum" value="0" onclick="addChar(this.form.display, '0')">
+                <input type="button" class="btnMath span" name="btnMath" value="&#46;" onclick="addChar(this.form.display, '&#46;')">
+                <input type="button" class="btnOpps span" name="btnOpps" value="x^&#50;" onclick="if(checkNum(this.form.display.value)) { square(this.form) }">
+                <input type="button" class="btnMath span" name="btnMath" value="+" onclick="addChar(this.form.display, '+')">
+                <input type="button" class="btnMath span" name="btnMath" value="(" onclick="addChar(this.form.display, '(')">
+                <input type="button" class="btnMath span" name="btnMath" value=")" onclick="addChar(this.form.display,')')">
+                <input type="button" class="btnMath span" name="btnMath" value="cos" onclick="if(checkNum(this.form.display.value)) { cos(this.form) }">
+                <input type="button" class="btnMath span" name="btnMath" value="sin" onclick="if(checkNum(this.form.display.value)) { sin(this.form) }">
+                <input type="button" class="btnMath span" name="btnMath" value="tan" onclick="if(checkNum(this.form.display.value)) { tan(this.form) }">
+        </form>
+    </div>
+</div>
+<div class="div">
+    <div class="live-editor"><span color="yellow">OA</span> Live HTML Editor</div>
+    <div class="center">
+        <button id="makebold"> B </button><button style="text-decoration: underline;"> A </button>
+      </div>
+    <div class="container3">
+        <textarea id="html" placeholder="HTML, pls dont write &lt;title&gt; tag." rows="20"></textarea>
+        <textarea id="css" rows="20" placeholder="CSS">body{background-color: white}</textarea>
+        <textarea id="js" placeholder="JavaScript" rows="20"></textarea><br>
+        <iframe id="code"></iframe>
+    </div>
+</div>
+<div class="coming-soon">More Advanced and amazing<br>Tools <span color="yellow">coming soon...</span></div>
+<script type="text/javascript" src="alljs.js"></script>
+<script type="text/javascript" src="tilt.js"></script>
+<script type="text/javascript">
+	VanillaTilt.init(document.querySelector(".container2"), {
+		max: 15,
+		speed: 400,
+        glare: true,
+        "max-glare": 0.5,
+	});
+    VanillaTilt.init(document.querySelector(".clock"), {
+		max: 15,
+		speed: 400,
+        glare: true,
+        "max-glare": 0.5,
+	});
+</script>
+<script src="jquery.js"></script>
+<script>
+    $("#makebold").click(function){
+        $("#html").get
+    }
+</script>
+</body>
+
+</html>
